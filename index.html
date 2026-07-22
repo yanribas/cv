@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Ribeiro Xavier — Currículo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* HEADER / TOP SECTION */
+        .header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            padding: 50px 50px 40px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7, #ff6b6b);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .header-left h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .header-left .role {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 14px;
+        }
+
+        .header-left .tagline {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.65);
+            max-width: 480px;
+            line-height: 1.5;
+        }
+
+        .header-right {
+            text-align: right;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .header-right a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header-right a:hover {
+            color: #00d4ff;
+        }
+
+        .header-right .icon {
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+            margin-right: 4px;
+        }
+
+        /* BODY */
+        .body {
+            padding: 45px 50px 50px;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 38px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #302b63;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #302b63;
+            display: inline-block;
+        }
+
+        .section-title-bar {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e8e8f0;
+        }
+
+        /* SUMMARY */
+        .summary p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            margin-bottom: 28px;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .exp-header h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .exp-header .exp-company {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #302b63;
+        }
+
+        .exp-header .exp-period {
+            font-size: 0.82rem;
+            color: #888;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .exp-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .exp-tags span {
+            background: #f0f0f8;
+            color: #302b63;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .project-card {
+            background: #f8f8fe;
+            border-radius: 12px;
+            padding: 16px 18px;
+            border: 1px solid #eeeef8;
+            transition: border-color 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: #302b63;
+        }
+
+        .project-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 3px;
+        }
+
+        .project-card .project-type {
+            font-size: 0.75rem;
+            color: #7b2ff7;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .project-card p {
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .project-card .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .project-card .tech span {
+            background: #fff;
+            border: 1px solid #ddddee;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #555;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #302b63;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            font-size: 0.85rem;
+            color: #555;
+            padding: 3px 0;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .skill-category ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #7b2ff7;
+            font-weight: 700;
+        }
+
+        /* EDUCATION */
+        .edu-item {
+            margin-bottom: 16px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-header h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .edu-header .edu-period {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .edu-item .edu-detail {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* PRINT */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header {
+                padding: 35px 40px 30px;
+            }
+            .body {
+                padding: 30px 40px 35px;
+            }
+            .project-card:hover {
+                border-color: #eeeef8;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .header-right {
+                text-align: left;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .header {
+                padding: 30px 25px;
+            }
+            .body {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>Yan Ribeiro Xavier</h1>
+                    <div class="role">Desenvolvedor Full Stack PHP</div>
+                    <div class="tagline">
+                        Desenvolvedor com 3+ anos de experiência em PHP, criação de sistemas ERP, 
+                        e-commerce e sites institucionais. Entregas completas do zero ao deploy.
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div>📍 São Paulo — SP (Zona Sul)</div>
+                    <div>📧 yan.ribeiro16@hotmail.com</div>
+                    <div>📱 11 99304-2723</div>
+                    <div>🔗 <a href="https://linkedin.com/in/yanxavierdev" target="_blank">linkedin.com/in/yanxavierdev</a></div>
+                    <div>🐙 <a href="https://github.com/yanribas" target="_blank">github.com/yanribas</a></div>
+                    <div>🎂 28 anos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="body">
+
+            <!-- RESUMO -->
+            <div class="section">
+                <div class="section-title-bar">
+                    <div class="section-title">Resumo</div>
+                </div>
+                <div class="summary">
+                    <p>
+                        Desenvolvedor full stack com sólida experiência em PHP (CodeIgniter 4, WordPress/WooCommerce, PHP puro) 
+                        e criação de sistemas completos — ERPs, plataformas de gestão, e-commerces e sites institucionais. 
+                        Atuei como único desenvolvedor da GWA Informática, sendo responsável por todo o ciclo de vida dos projetos: 
+                        levantamento de requisitos, arquitetura, desenvolvimento, deploy e manutenção. 
+                        Pós-graduado em Engenharia da Qualidade de Software, com visão crítica sobre boas práticas 
+                        e melhoria contínua. Busco oportunidade CLT como desenvolvedor PHP Pleno para contribuir 
+                        em times de tecnologia e continuar evoluindo tecnicamente.
+                    </p>
+                </div>
+            </div>
+
+            <!-- EXPERIÊNCIA -->
+            <div class="section">
+                <div class="section-title-bar">
+                    <div class="section-title">Experiência</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Desenvolvedor Front-end & Designer</h3>
+                            <div class="exp-company">Ghost Dashboard</div>
+                        </div>
+                        <div class="exp-period">PJ — atual</div>
+                    </div>
+                    <div class="exp-desc">
+                        Criação de skins personalizadas para painéis digitais, do design ao código. 
+                        Fluxo completo: prototipação no Figma → transformação em HTML + JavaScript 
+                        → deploy via GitHub com PRs e merge. Também responsável pelo site e e-commerce 
+                        da empresa. Atuação como dev e designer.
+                    </div>
+                    <div class="exp-tags">
+                        <span>Figma</span>
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>Git</span>
+                        <span>GitHub PR</span>
+                        <span>UI Design</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Desenvolvedor Full Stack</h3>
+                            <div class="exp-company">GWA Informática</div>
+                        </div>
+                        <div class="exp-period">nov/2022 — atual</div>
+                    </div>
+                    <div class="exp-desc">
+                        Único desenvolvedor da empresa, responsável por todo o ciclo de desenvolvimento 
+                        de sistemas web, sites e e-commerces para clientes de diversos segmentos. 
+                        Atuação completa: concepção, modelagem de banco de dados, desenvolvimento 
+                        back-end e front-end, deploy e suporte contínuo. Também atuei na gestão 
+                        de projetos e suporte técnico aos clientes.
+                    </div>
+                    <div class="exp-tags">
+                        <span>PHP</span>
+                        <span>CodeIgniter 4</span>
+                        <span>WordPress</span>
+                        <span>WooCommerce</span>
+                        <span>MySQL</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJETOS / REALIZAÇÕES -->
+            <div class="section">
+                <div class="section-title-bar">
+                    <div class="section-title">Projetos & Realizações</div>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-type">🔷 Sistema ERP</div>
+                        <h4>SoftClean Beauty</h4>
+                        <p>ERP completo para gestão de e-commerce de cosméticos: cadastro de produtos com fotos, categorias, marcas, subcategorias, controle de estoque, upload de imagens e dashboard administrativo. PHP puro + PDO + MySQL.</p>
+                        <div class="tech">
+                            <span>PHP</span>
+                            <span>PDO</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                            <span>jQuery</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🔷 Sistema ERP</div>
+                        <h4>Sistemas Urbanos Engenharia</h4>
+                        <p>ERP para gestão de projetos de engenharia: cadastro de clientes, projetos, propostas, forecast financeiro, tarefas, controle de equipe, notificações, geração de PDF com Dompdf. CodeIgniter 4.</p>
+                        <div class="tech">
+                            <span>CodeIgniter 4</span>
+                            <span>PHP 8</span>
+                            <span>MySQL</span>
+                            <span>Dompdf</span>
+                            <span>Composer</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🔷 Sistema de Gestão</div>
+                        <h4>Instituto Olga Kos (SIOK / SAOK)</h4>
+                        <p>Sistemas de gestão para instituto cultural: cadastro de participantes, controle de polos, anamnese, fichas de inscrição, painel administrativo. +6 sites institucionais do grupo.</p>
+                        <div class="tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🔷 Sistema de Gestão</div>
+                        <h4>Grupo Forte</h4>
+                        <p>Sistema de gestão empresarial com painel administrativo, controle de acesso e módulos de cadastro. Inclui versão mobile (APK).</p>
+                        <div class="tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>APK Mobile</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🛒 E-commerce</div>
+                        <h4>SRVGÁS</h4>
+                        <p>Site institucional + loja virtual completa com WooCommerce, Elementor PRO, Mercado Pago, Bling ERP, Brevo, Melhor Envio e Yoast SEO.</p>
+                        <div class="tech">
+                            <span>WordPress</span>
+                            <span>WooCommerce</span>
+                            <span>Elementor PRO</span>
+                            <span>Mercado Pago</span>
+                            <span>Bling</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🛒 E-commerce</div>
+                        <h4>Shoptron</h4>
+                        <p>E-commerce WooCommerce em produção com stack completa: Elementor PRO, Fluid Checkout, Mercado Pago, compliance LGPD, chat integrado e otimização SEO.</p>
+                        <div class="tech">
+                            <span>WordPress</span>
+                            <span>WooCommerce</span>
+                            <span>Elementor PRO</span>
+                            <span>LGPD</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🌐 Site Institucional</div>
+                        <h4>Vertas Ambiental</h4>
+                        <p>Site institucional + SAA (Sistema de Abastecimento de Água) em CodeIgniter 4 com multi-idioma (pt/en), formulários, CTA, SEO e design responsivo.</p>
+                        <div class="tech">
+                            <span>CodeIgniter 4</span>
+                            <span>PHP 8</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-type">🌐 Sites</div>
+                        <h4>Projetos Adicionais</h4>
+                        <p>Construserv, Censea, Ativa Contábil, Colégio Monte Sinai, Resultado Treinamentos, 
+                        Like Produções — sites institucionais responsivos com templates personalizados.</p>
+                        <div class="tech">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- HABILIDADES TÉCNICAS -->
+            <div class="section">
+                <div class="section-title-bar">
+                    <div class="section-title">Habilidades Técnicas</div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Back-end</h4>
+                        <ul>
+                            <li>PHP 7/8 (PDO, POO)</li>
+                            <li>CodeIgniter 3/4</li>
+                            <li>WordPress / WooCommerce</li>
+                            <li>APIs REST (integrações)</li>
+                            <li>Composer, Git</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Front-end</h4>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>Bootstrap 4/5</li>
+                            <li>jQuery, Ajax</li>
+                            <li>Elementor PRO</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Infra & Ferramentas</h4>
+                        <ul>
+                            <li>MySQL, MariaDB</li>
+                            <li>Apache (WAMP)</li>
+                            <li>Git / GitHub / Bitbucket</li>
+                            <li>FileZilla, CPanel</li>
+                            <li>Google Workspace API</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Integrações</h4>
+                        <ul>
+                            <li>Mercado Pago (checkout)</li>
+                            <li>Bling ERP</li>
+                            <li>Brevo (email marketing)</li>
+                            <li>Melhor Envio</li>
+                            <li>Yoast SEO</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Automação & IA</h4>
+                        <ul>
+                            <li>Opencode (plano Go)</li>
+                            <li>DeepSeek V4 Flash / Pro</li>
+                            <li>Hermes Agent</li>
+                            <li>Telegram Bot API</li>
+                            <li>Google Calendar/Gmail API</li>
+                            <li>Linux (terminal básico)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Design</h4>
+                        <ul>
+                            <li>Corel Draw</li>
+                            <li>Figma (prototipação)</li>
+                            <li>Criação de identidade visual</li>
+                            <li>Wireframes e mockups</li>
+                            <li>Photoshop (básico)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>Trabalho solo e autogestão</li>
+                            <li>Relacionamento com cliente</li>
+                            <li>Resolução de problemas</li>
+                            <li>Visão de produto</li>
+                            <li>Comunicação técnica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMAÇÃO -->
+            <div class="section">
+                <div class="section-title-bar">
+                    <div class="section-title">Formação</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h4>Pós-graduação em Engenharia da Qualidade de Software</h4>
+                        <span class="edu-period">Concluído</span>
+                    </div>
+                    <div class="edu-detail"></div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h4>Gestão da Tecnologia da Informação</h4>
+                        <span class="edu-period">Concluído</span>
+                    </div>
+                    <div class="edu-detail"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
+        Currículo gerado em Julho/2026
+    </div>
+</body>
+</html>
